@@ -6,12 +6,18 @@ App initializer
 */
 
 import SwiftUI
+import FoundationModels
 
 @main
 struct FMSampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            switch SystemLanguageModel.default.availability {
+            case .available:
+                ContentView()
+            case .unavailable(let reason):
+                UnavailableView(reason: reason)
+            }
         }
     }
 }
