@@ -6,6 +6,7 @@ View showing the result of reasoning on the available material for timeline extr
 */
 
 import SwiftUI
+import FoundationModels
 
 enum ReasoningSheetOperation: Identifiable {
     case actionItems
@@ -62,8 +63,42 @@ struct ReasoningSheet: View {
                     }
                 }
             }
+            .task {
+                do {
+                    try await loadSummaryContent()
+                } catch let error as LanguageModelSession.GenerationError {
+                    switch error {
+                    case .guardrailViolation:
+                        print("Generation was blocked due to safety guardrails: \(error)")
+                    default:
+                        print("Generation error: \(error)")
+                    }
+                } catch {
+                    print("Error: \(error)")
+                }
+            }
         }
         .adaptiveSheetFrame()
+    }
+
+    @Generable
+    struct Summary {
+        var summary: String
+    }
+    
+    private func loadSummaryContent() async throws {
+        generationState = .started
+        let fullText = meetingItems.map { String($0.text.characters) }.joined(separator: "\n\n")
+        let model = SystemLanguageModel.default
+        let instructions = "You are a helpful meeting assistant. Your task is to create a concise, neutral summary of the following meeting transcript and project-related documents. You MUST summarize the text in three paragraphs or less. You MUST be concise."
+        let session = LanguageModelSession(model: model, instructions: instructions)
+        let stream = session.streamResponse(to: fullText, generating: Summary.self)
+        
+        for try await partialResponse in stream {
+            reasoningOutput = AttributedString(partialResponse.content.summary ?? "")
+            generationState = .generating
+        }
+        generationState = .completed
     }
 }
 
