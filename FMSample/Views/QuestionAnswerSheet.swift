@@ -59,6 +59,7 @@ struct QuestionAnswerSheet: View {
                     let model = SystemLanguageModel(useCase: .general)
                     session = LanguageModelSession(
                         model: model,
+                        tools: [AvailabilityTool()],
                         instructions: """
                         You are a helpful office team member who takes meeting notes and collects documents related to the team's projects. Answer the user's question below, based ONLY on the provided information.
                         Important: if the user's question is unrelated to the provided information, say "Sorry, I can't answer that question".
@@ -128,5 +129,33 @@ struct QuestionAnswerSheet: View {
             }
             generationState = .generating
         }
+    }
+}
+
+struct AvailabilityTool: Tool {
+    let name = "CheckAvailability"
+    let description = "Checks the user's availability on a given date."
+
+    @Generable
+    struct Arguments {
+        @Guide(description: "The date to check availability for. It can be relative (e.g. 'tomorrow', or 'in 5 days') or absolute (e.g. 'March 15'; some components may be omitted, such as the year)")
+        let date: String
+    }
+
+    // Not available on even days
+    func call(arguments: Arguments) async throws -> String {
+        let types: NSTextCheckingResult.CheckingType = .date
+        let detector = try NSDataDetector(types: types.rawValue)
+        let text = arguments.date
+        let matches = detector.matches(in: text, options: [], range: NSRange(text.startIndex..., in: text))
+        if let match = matches.first,
+           let date = match.date {
+            if Calendar.current.component(.day, from: date).isMultiple(of: 2) {
+                return "You are not available on \(date.formatted(date: .abbreviated, time: .omitted))"
+            } else {
+                return "You are available on \(date.formatted(date: .abbreviated, time: .omitted))"
+            }
+        }
+        return "I do not have information regarding your availability on \(text)"
     }
 }
