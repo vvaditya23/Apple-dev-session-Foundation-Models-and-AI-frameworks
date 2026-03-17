@@ -177,6 +177,40 @@ struct ReasoningSheet: View {
         }
     }
 
+    static let sampleTimeline = Timeline(
+        timeline: [
+            Timeline.TimelineItem(
+                title: "Project kickoff",
+                date: "April 1, 2026",
+                owner: "Alice Johnson",
+                status: "complete",
+                priority: .medium
+            ),
+            Timeline.TimelineItem(
+                title: "Share roadmap with design team",
+                date: "May 2, 2026",
+                owner: "Bob Smith",
+                status: "in progress",
+                priority: .medium
+            ),
+            Timeline.TimelineItem(
+                title: "Present to leadership",
+                date: "June 3, 2026",
+                owner: "Claire White",
+                status: "planned",
+                priority: .high
+            ),
+            Timeline.TimelineItem(
+                title: "Complete security review",
+                date: "July 2026",
+                owner: "Dana Lee",
+                status: "planned",
+                priority: .high
+            )
+        ],
+        extractionNotes: ""
+    )
+
     private func loadTimelineContent() async throws -> LanguageModelSession {
         let model = SystemLanguageModel(useCase: .general, guardrails: .permissiveContentTransformations)
         let session = LanguageModelSession(model: model, instructions: {
@@ -196,7 +230,10 @@ struct ReasoningSheet: View {
             
             BASE YOUR RESPONSE SOLELY ON THE PROVIDED TRANSCRIPTS. Do not add assumptions or information not present in the text.
             If the text does not contain tasks or deliverables, say "There are no tasks nor timelines".
+
+            Here is an example, but don't copy it:
             """
+            Self.sampleTimeline
         })
 
         let text = meetingItems
