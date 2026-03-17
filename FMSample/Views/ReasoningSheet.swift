@@ -94,23 +94,30 @@ struct ReasoningSheet: View {
         var summary: String
     }
     
-    private func loadSummaryContent() async throws -> LanguageModelSession {
-        generationState = .started
+    private func loadSummaryContent() async throws -> LanguageModelSession? {
         let fullText = meetingItems.map { String($0.text.characters) }.joined(separator: "\n\n")
 
         let model = SystemLanguageModel(useCase: .general, guardrails: .permissiveContentTransformations)
         let instructions = "You are a helpful meeting assistant. Your task is to create a concise, neutral summary of the following meeting transcript and project-related documents. You MUST summarize the text in three paragraphs or less. You MUST be concise."
-        let session = LanguageModelSession(model: model, instructions: instructions)
-        let stream = session.streamResponse(to: fullText, generating: Summary.self)
-        
-        for try await partialResponse in stream {
-            reasoningOutput = AttributedString(partialResponse.content.summary ?? "")
-            generationState = .generating
+
+        let processor = ChunkProcessor(text: fullText)
+        defer { generationState = .completed }
+
+        let summary = try await processor.process() { text in
+            let session = LanguageModelSession(model: model, instructions: instructions)
+            let stream = session.streamResponse(to: text, generating: Summary.self)
+            var chunkSummary = ""
+            for try await partialResponse in stream {
+                chunkSummary = partialResponse.content.summary ?? ""
+                reasoningOutput = AttributedString(chunkSummary)
+                generationState = .generating
+            }
+            return chunkSummary + "\n"
         }
-        generationState = .completed
-        return session
+        reasoningOutput = AttributedString(summary)
+        return nil
     }
-    
+
     @Generable
     struct ActionItems {
         @Guide(description: "A list of priority action items from the meeting", .maximumCount(10))
