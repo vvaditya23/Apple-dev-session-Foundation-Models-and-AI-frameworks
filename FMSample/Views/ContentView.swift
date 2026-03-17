@@ -96,8 +96,8 @@ struct ContentView: View {
         }
 #if os(iOS)
         .fullScreenCover(isPresented: $isScanningDocument) {
-            DocumentScannerView(isPresented: $isScanningDocument) {
-                let newItem = ScannedItem(title: "Title", text: "Text")
+            DocumentScannerView(isPresented: $isScanningDocument) { scan in
+                let newItem = ScannedItem(scan: scan)
                 meetingItems.append(newItem)
                 selection = newItem
             }
