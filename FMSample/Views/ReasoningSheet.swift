@@ -89,7 +89,8 @@ struct ReasoningSheet: View {
     private func loadSummaryContent() async throws {
         generationState = .started
         let fullText = meetingItems.map { String($0.text.characters) }.joined(separator: "\n\n")
-        let model = SystemLanguageModel.default
+
+        let model = SystemLanguageModel(useCase: .general, guardrails: .permissiveContentTransformations)
         let instructions = "You are a helpful meeting assistant. Your task is to create a concise, neutral summary of the following meeting transcript and project-related documents. You MUST summarize the text in three paragraphs or less. You MUST be concise."
         let session = LanguageModelSession(model: model, instructions: instructions)
         let stream = session.streamResponse(to: fullText, generating: Summary.self)
