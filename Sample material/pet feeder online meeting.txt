@@ -1,0 +1,14 @@
+Date: November 1, 2025
+Time: 1:30 PM
+Location: conferencing bridge
+
+Okay, can everyone hear me? Yeah, all good. Yep, loud and clear. Cool. So, we’re here to make sure we’re on track for the pet feeder presentation to the directors in January. That’s January 10th, right? Yep, Friday the 10th. Which means we’ve got about… ten weeks. Nine and a half if you subtract the holiday break. Ugh, right. Half the team’s out the last two weeks of December. Exactly. So realistically, we’ve got until December 20th to lock everything before the break.
+Okay, so what’s the current state of the prototype? We’ve got the feeding mechanism at 80%. The dispensing works, but the app still has a delay when triggering manual feed. Is that firmware or app-side? Firmware. The motor’s over-responding, so it keeps spinning after the signal. So it dumps too much food. Exactly. I’ll have a fix ready by November 15th. Make it the 13th if possible — I want a stable build before the next demo.
+Right, and on the design side? We’re finalizing the colorways this week. Still debating between the matte white and the brushed silver. The directors are going to ask why we need both. Because pets. And kitchens. It needs to blend in. Fair. Just make sure that reasoning is crisp in the presentation.
+Speaking of the presentation — who’s actually speaking? I’ll open. Then design walks through the physical product, engineering shows the tech, and marketing closes with the value prop. So four segments total? Yeah. And we’ll run through it together mid-December. Let’s pencil that for December 12th, so we’ve got a week to tweak slides before the break. Got it.
+When’s the final prototype due for photography? November 29th. That’s tight. I know, but we need those shots for the deck and the promo video. Okay, as long as we don’t slip past that — the render placeholders won’t fly with the directors.
+What about packaging? Concepts are done. We’ll start prototyping once design signs off on the final finish. So, first week of December? Yeah, December 2nd.
+Let’s talk timeline again — firmware fix November 13th, final prototype November 29th, photography early December, internal rehearsal December 12th, presentation January 10th. Sounds right. Add: deck first draft by November 25th, so we’re not scrambling. Noted.
+Oh — are we doing live demo or video? Video. We learned our lesson last time with the “live” coffee maker that wouldn’t connect. Yes, thank you for reminding us of that glorious disaster. So, pre-recorded demo, edited by January 3rd. Perfect.
+Anything else? Yeah, who’s handling director Q&A prep? We’ll do a mock Q&A on January 6th. I’ll compile likely questions over the break. Good idea.
+Alright, sounds like we’re in good shape. Let’s keep everything tracked in our system — I’ll update the timeline this afternoon. Cool. Thanks, everyone. Thanks. See you next week. Bye.

@@ -1,0 +1,82 @@
+Date: March 15, 2024 Time: 2:00 PM Location: Engineering Lab, Building 3
+
+Alright everyone, let's get started. Thanks for making it today. We've got exactly four weeks until the launch event on April 15th, so we need to make sure we're all on track. Let's go around and get status updates. Marcus, want to start with the airframe?
+Yeah, sure. So the body tube design is finalized. I've already ordered the fiberglass from AeroTech, should arrive by Monday. I'm planning to start the layup process by Wednesday at the latest.
+Wednesday works. That's what, March 20th? Put that as your deadline, Marcus. We need the airframe cured and ready for integration by the end of that week.
+Got it. March 20th for starting the layup, and I'll have it fully cured by March 27th.
+Quick question - are we going with the three-fin or four-fin configuration?
+Oh, good point. Sarah, we never actually decided that at the last meeting.
+Right, right. Let's stick with three fins for weight savings. Simulations showed it's stable enough. Marcus, go with three.
+Perfect. Three fins it is.
+Okay, Priya, how's the recovery system looking?
+Um, so I finished the parachute calculations, and I've ordered both the drogue and main chutes. They should be here by tomorrow actually. I still need to work on the shock cord attachments though. That's my next priority.
+Good. When can you have the shock cord mounts done?
+I'm thinking... maybe by next Tuesday? March 19th?
+That works, but let's make it a high priority since Marcus will need those integrated into the airframe. Can you coordinate with him directly?
+Yeah, absolutely. I'll text you, Marcus, when they're ready.
+Sounds good.
+Hey, sorry I'm late everyone. Traffic was terrible.
+No worries, David. Actually, perfect timing. We need to talk about the motor mount. Where are we on that?
+Ah, yeah. So I've been testing different epoxy combinations for the motor mount, and I think I found one that'll hold up to the G80 motor we're planning to use. I built a test mount last week and it survived the stress test.
+Awesome. So you're good to build the final version?
+Yep. I can have it done by... let's say Friday, March 22nd. That's a week from today.
+Perfect. That's before we need it. David, Friday the 22nd is your deadline.
+Wait, are we definitely going with the G80? I thought we were considering the H128 for more altitude.
+We talked about it, but the H128 puts us over the weight limit for the competition category we're entering. Stick with the G80.
+Okay, cool. Just wanted to make sure.
+Speaking of which, Jenna, what's happening with the avionics bay?
+Right, so I've got the altimeter wired up and tested. The GPS tracker is also working great. I did three test runs this week and it's reporting accurate data every time. The only thing I'm waiting on is the battery connector - I ordered the wrong size like an idiot, so I had to reorder. Should be here Monday.
+Okay, so when will the whole avionics package be ready for installation?
+Once I get the connector, probably just need a day to solder everything. So Tuesday, March 19th? Same day as Priya's deadline.
+Great. Make that a high priority, Jenna. We can't launch without avionics.
+You got it.
+Hey Sarah, just a thought - should we schedule a full integration day? Like, when everyone brings their components and we put it all together?
+Yes! Good call. Let's plan for Saturday, March 30th. That gives us two weeks before launch to do final tests and make any adjustments.
+That's good, because I was getting worried about the timeline.
+Yeah, me too honestly.
+Okay, so integration day is March 30th. Everyone needs their components done before then. That means Marcus has the airframe, David has the motor mount, Priya has recovery, and Jenna has avionics all ready to go. Got it?
+Yep. / Got it. / Sounds good.
+Cool. Now, let's talk about paint and decals. Alex, you've been quiet over there.
+Oh! Yeah, sorry. I've been sketching out some design ideas. I was thinking we could do a Phoenix rising theme - you know, orange and red gradient with some flame effects on the fins?
+That actually sounds sick.
+I love that. Very on-brand for Project Phoenix.
+Awesome. So I'll work on the final design this weekend and show you guys early next week. Once the airframe is ready, I'll need like two days to paint and let it cure.
+Okay, so you're dependent on Marcus's timeline. Let's say you'll paint on March 28th and 29th, right before integration. That work?
+Perfect, yeah.
+Great. Now, has anyone thought about ground support equipment? We need a launch rail, ignition system, that kind of thing.
+Oh, I can handle that. I've got a launch rail from my last project. Just needs some minor repairs. And I can build an ignition controller pretty easily.
+When can you have that ready?
+Honestly, it's pretty low priority compared to the motor mount. I can bang it out the week before launch, like April 8th or 9th.
+Okay, but don't forget about it. Put a reminder in your phone or something.
+Will do.
+Question - do we need to file any paperwork for the launch site?
+Oh good point. Yes, we need to submit a flight plan to the regional rocketry association by April 1st. I'll handle that, but I need final weight and altitude projections. Jenna, can you run the sims once we have all the component weights locked in?
+Sure. When do you need them by?
+Let's say March 28th, to give me a few days to file the paperwork. Make that a high priority task for you.
+Got it. March 28th for simulation results.
+Are we doing any ground tests before the launch?
+Definitely. I'm thinking we do a full dress rehearsal on April 12th, three days before launch. We'll load the motor, test the ignition system, make sure recovery deploys correctly - everything except actually launching it.
+That's smart. Better to find problems on the ground than in the air.
+Speaking of problems, what's our backup plan if something breaks during integration?
+Good question. We'll keep a buffer in the budget for emergency parts orders. But that's why we're doing integration two weeks early - gives us time to fix issues.
+Makes sense.
+Alright, let me recap the key deadlines. Marcus, you're starting airframe layup by March 20th, done by the 27th. Priya, shock cord mounts by March 19th, high priority. David, motor mount by March 22nd. Jenna, avionics package by March 19th, high priority, and simulation results by March 28th. Alex, painting on March 28-29th. Full integration on March 30th. David, launch equipment by April 8th. I'll file paperwork by April 1st. Dress rehearsal April 12th. Launch day April 15th. Everyone got their tasks?
+Yep. / Yes. / Got it. / All good.
+This is actually coming together really well.
+Yeah, I'm feeling pretty confident about this timeline.
+As long as nothing explodes.
+Don't jinx it!
+(laughing) Alright, alright. Anything else we need to discuss?
+Oh, random question - is anyone else going to the SpaceX launch viewing party next week?
+Wait, there's a launch next week?
+Yeah, Starship test flight. Some people from the astronomy club are getting together to watch the stream.
+Oh I'm totally in. What time?
+Like 7 PM on Tuesday.
+Count me in too.
+Okay, this is turning into a social planning session. (laughing) But yeah, I'll probably come too. We can talk about it after this meeting.
+Cool, cool.
+Anything else rocket-related we need to cover?
+I think we're good.
+Yeah, I'm all set.
+Perfect. Alright team, let's make this happen. Remember, we're launching in exactly one month. Stay on top of your deadlines, communicate if you hit any roadblocks, and let's build an awesome rocket. Meeting adjourned!
+Thanks Sarah! / See you guys! / Later! / Good meeting!

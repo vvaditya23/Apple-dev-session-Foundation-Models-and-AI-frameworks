@@ -1,0 +1,36 @@
+Oct 28, 2025 
+Alright, let’s get started. The main focus today is the new onboarding flow for the mobile app. Arjun, do you want to set the context?
+Yeah, sure. So we’ve seen a 22% drop-off between screen three and screen four of the onboarding, mainly around permissions. We need a redesign that feels smoother, less like a chore.
+I actually ran quick usability sessions last week—three participants—and everyone said the permissions felt “too early” and “pushy.” I’ve written a report; it’s in the shared drive. I’ll post the link again in Slack.
+Perfect. So, Lila, where are we with the new layout options?
+I’ve got two directions ready — one that spaces out the steps into a progress bar and one with contextual permission prompts. The second one tested better internally. I still need new illustrations though; the current ones feel too corporate.
+Good call. Can you sync with the brand team about illustrations?
+Yep. I’ll take that. Let’s say by Friday, Nov 1?
+Works for me. Mark it as medium priority.
+
+Quick reminder: the dev team needs the final designs by Nov 12 to stay on track for the beta release.
+Right. So, we’ll need to wrap user testing by Nov 8 latest. Tom, can you handle scheduling and the test plan?
+Already started drafting it. I’ll finalize by Monday and line up five participants by Wednesday.
+Great.
+
+Quick one — I started building the interactive prototype in Figma. Right now it’s just the new flow. I’ll add animations once Lila finalizes her version.
+Oh, can you use the new motion library from last week? The transitions feel a bit abrupt otherwise.
+Yep, already imported it. Should be smooth.
+
+Cool. Next — accessibility. We had feedback about small tap targets on the “Continue” button.
+Yeah, I’ll increase that to 48x48 minimum. I’ll fix that today.
+Awesome.
+Also, one tester mentioned color contrast issues on the light mode. Maybe we should check compliance again?
+I’ll run a full WCAG check once the visuals are locked.
+
+One more thing — marketing wants to preview the onboarding for their launch materials. Can we give them a mock video by next Thursday, Nov 7?
+I can export a prototype recording once the final flow’s ready.
+Let’s assign that to you then, Sam. Priority high.
+Got it.
+
+Alright, anything else before we wrap?
+Just a note — participants loved the tone of the copy. They said it “felt friendly but not childish.” Kudos to whoever wrote that.
+That was me. Finally some appreciation.
+
+Alright, everyone’s got their marching orders. Let’s reconvene next Tuesday, same time.
+Cool. Thanks, all. Meeting adjourned.
