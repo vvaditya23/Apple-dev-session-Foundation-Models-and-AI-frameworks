@@ -30,6 +30,7 @@ struct ReasoningSheet: View {
     @State private var reasoningOutput: AttributedString = ""
     @State private var generationState: AnswerGenerationState = .started
     @State private var feedbackState: FeedbackState = .none
+    @State private var reasoningSession: LanguageModelSession?
 
     var body: some View {
         NavigationStack {
@@ -65,7 +66,12 @@ struct ReasoningSheet: View {
             }
             .task {
                 do {
-                    try await loadSummaryContent()
+                    reasoningSession = switch operation {
+                    case .actionItems:
+                        try await loadActionItemsContent()
+                    default:
+                        try await loadSummaryContent()
+                    }
                 } catch let error as LanguageModelSession.GenerationError {
                     switch error {
                     case .guardrailViolation:
@@ -86,7 +92,7 @@ struct ReasoningSheet: View {
         var summary: String
     }
     
-    private func loadSummaryContent() async throws {
+    private func loadSummaryContent() async throws -> LanguageModelSession {
         generationState = .started
         let fullText = meetingItems.map { String($0.text.characters) }.joined(separator: "\n\n")
 
@@ -100,6 +106,37 @@ struct ReasoningSheet: View {
             generationState = .generating
         }
         generationState = .completed
+        return session
+    }
+    
+    @Generable
+    struct ActionItems {
+        @Guide(description: "A list of priority action items from the meeting", .maximumCount(10))
+        var actionItems: [String]
+    }
+    
+    private func loadActionItemsContent() async throws -> LanguageModelSession {
+        generationState = .started
+        let text = meetingItems
+//            .filter {$0 is RecordingItem}
+            .map { String($0.text.characters) }
+            .joined(separator: "\n\n")
+
+        let model = SystemLanguageModel.default
+        let session = LanguageModelSession(
+            model: model,
+            instructions: "You are a helpful assistant. Your task is to extract action items from transcripts of team meetings. The text provided to you contains team meeting transcripts. You MUST return a list of priority action items based ONLY on the provided text."
+        )
+        
+        let stream = session.streamResponse(to: text, generating: ActionItems.self)
+        for try await partialActionItems in stream {
+            reasoningOutput = partialActionItems.content.actionItems?.compactMap {
+                AttributedString("• \($0)")
+            }.joined(separator: "\n") ?? ""
+            generationState = .generating
+        }
+        generationState = .completed
+        return session
     }
 }
 
